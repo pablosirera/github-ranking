@@ -1,12 +1,12 @@
 <template>
   <section class="section">
-    <b-field label="Type your github user">
-      <b-input v-model="userName" />
+    <b-field label="Type some github users to generate ranking">
+      <b-taginput v-model="usersnames" />
     </b-field>
     <b-button type="is-success" rounded @click="searchUser">Search me</b-button>
     <section class="section">
       <!-- <UserList /> -->
-      <pre>{{ user }}</pre>
+      <pre>{{ users }}</pre>
     </section>
   </section>
 </template>
@@ -17,16 +17,18 @@ import { getContributions } from '@/utils/api/contributions'
 export default {
   name: 'HomePage',
   data: () => ({
-    userName: null,
-    user: null
+    usersnames: null,
+    users: []
   }),
   methods: {
     async searchUser() {
-      const data = await getContributions(
-        process.env.GITHUB_SECRET_TOKEN,
-        this.userName
-      )
-      this.user = data
+      for (const name of this.usersnames) {
+        const user = await this.fetchContributions(name)
+        this.users.push(user)
+      }
+    },
+    fetchContributions(username) {
+      return getContributions(process.env.GITHUB_SECRET_TOKEN, username)
     }
   }
 }

@@ -15,6 +15,10 @@ export async function getContributions(token, username) {
         user(login: "${username}") {
           name
           avatarUrl
+          id
+          followers {
+            totalCount
+          }
           contributionsCollection(from: "${from}", to: "${to}") {
             contributionCalendar {
               colors
@@ -29,9 +33,13 @@ export async function getContributions(token, username) {
     body: JSON.stringify(body),
     headers
   })
-  const { data } = await response.json()
-  const parsedData = ContributionsTransformer.fetch(data)
-  return parsedData
+  const data = await response.json()
+  if (data.errors && data.errors.length) {
+    console.error(data.errors)
+  } else {
+    const parsedData = ContributionsTransformer.fetch(data.data)
+    return parsedData
+  }
 }
 
 export async function getYears(token, username) {

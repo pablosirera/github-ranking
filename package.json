@@ -24,23 +24,23 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "cheerio": "^1.0.0-rc.3",
-    "node-fetch": "^2.6.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^3.1.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1",
     "husky": "^4.0.0",
     "lint-staged": "^10.0.0",
-    "@nuxtjs/stylelint-module": "^3.1.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
     "stylelint": "^10.1.0"
   }
 }

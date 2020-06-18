@@ -72,6 +72,9 @@ export default {
     theme: 'toasted-primary',
     singleton: true
   },
+  env: {
+    GITHUB_SECRET_TOKEN: process.env.GITHUB_SECRET_TOKEN
+  },
   /*
    ** Build configuration
    */

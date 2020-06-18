@@ -1,4 +1,6 @@
-# github-ranking
+# Github Ranking
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5cde4eb2-1c80-4af6-9926-baa2276310a0/deploy-status)](https://app.netlify.com/sites/github-ranking/deploys)
 
 > Github contributors ranking
 

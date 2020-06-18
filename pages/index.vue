@@ -8,8 +8,8 @@
         Github ranking
       </h1>
       <p>
-        Type all users what you prefer and generate ranking to see who is the
-        winner.
+        Type all the users that you prefer and generate ranking to see who is
+        the winner.
       </p>
     </div>
     <b-field>

@@ -30,7 +30,7 @@
     >
       Create ranking
     </b-button>
-    <section class="section">
+    <section class="section user-list">
       <UserList v-if="!isLoaded && users.length" :items="users" />
     </section>
   </section>
@@ -107,6 +107,12 @@ export default {
 
   p {
     font-size: 18px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .section.user-list {
+    padding: 0;
   }
 }
 </style>

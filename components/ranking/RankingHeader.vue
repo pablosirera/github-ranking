@@ -42,4 +42,11 @@ h3 {
     color: $yellow;
   }
 }
+
+@media (max-width: $mobile) {
+  h3 {
+    display: flex;
+    align-items: center;
+  }
+}
 </style>

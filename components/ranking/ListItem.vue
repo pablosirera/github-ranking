@@ -85,6 +85,7 @@ li {
   display: flex;
   flex-direction: column;
 }
+
 .leader {
   display: inline-block;
   vertical-align: text-bottom;
@@ -106,6 +107,12 @@ li {
     position: absolute;
     left: 44.5%;
     bottom: 55px;
+
+    @media (max-width: $mobile) {
+      top: 92px;
+      bottom: unset;
+      left: 40%;
+    }
   }
 
   &:nth-child(1) {
@@ -119,20 +126,32 @@ li {
   }
   &:nth-child(2) {
     float: left;
-    padding-top: 2em;
+    padding-top: 32px;
+
     .list-index {
       background-color: $purple;
+
+      @media (max-width: $mobile) {
+        top: 92px + 32px;
+      }
     }
   }
 
   &:nth-child(3) {
     float: right;
-    padding-top: 2em;
+    padding-top: 36px;
+
+    .list-index {
+      @media (max-width: $mobile) {
+        top: 92px + 36px;
+      }
+    }
   }
 }
 .list-index {
   display: inline-block;
 }
+
 .list-sm {
   margin: 0 2em;
   padding: 2em 0;
@@ -141,8 +160,14 @@ li {
     vertical-align: middle;
   }
   .list-index {
-    margin: 0;
     padding-right: 2em;
+  }
+}
+
+@media (max-width: $mobile) {
+  .list-sm {
+    margin: 0;
+    padding: 1em 0;
   }
 }
 </style>

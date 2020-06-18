@@ -38,4 +38,10 @@ export default {
 ul {
   padding: 0 20px;
 }
+
+@media (max-width: $mobile) {
+  ul {
+    padding: 0;
+  }
+}
 </style>

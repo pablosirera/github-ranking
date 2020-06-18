@@ -2,10 +2,28 @@
   <section class="section">
     <b-loading :active.sync="isLoaded" :can-cancel="false"></b-loading>
 
-    <b-field label="Type some github users to generate ranking">
-      <b-taginput v-model="usersnames" />
+    <div class="header">
+      <h1>
+        <img src="@/assets/mark-github.svg" />
+        Github ranking
+      </h1>
+      <p>
+        Type all users what you prefer and generate ranking to see who is the
+        winner.
+      </p>
+    </div>
+    <b-field>
+      <b-taginput v-model="usersnames" placeholder="Github users" expanded />
+      <p class="control">
+        <b-button
+          :disabled="usersnames && !usersnames.length"
+          type="is-info"
+          @click="searchUser"
+        >
+          Create ranking
+        </b-button>
+      </p>
     </b-field>
-    <b-button type="is-success" rounded @click="searchUser">Search me</b-button>
     <section class="section">
       <UserList v-if="!isLoaded && users.length" :items="users" />
     </section>
@@ -30,8 +48,12 @@ export default {
       this.isLoaded = true
       this.users.splice(0, this.users.length)
       for (const name of this.usersnames) {
-        const user = await this.fetchContributions(name)
-        this.users.push(user)
+        const response = await this.fetchContributions(name)
+        if (response.errors) {
+          this.$toasted.error('One of the users are not found')
+        } else {
+          this.users.push(response)
+        }
       }
 
       this.orderUsers(this.users)
@@ -51,6 +73,33 @@ export default {
         return 0
       })
     }
+  },
+  head() {
+    return {
+      title: 'Github Contributions Ranking'
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.header {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-weight: bold;
+    font-size: 42px;
+
+    img {
+      width: 40px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+</style>

@@ -35,7 +35,7 @@ export async function getContributions(token, username) {
   })
   const data = await response.json()
   if (data.errors && data.errors.length) {
-    console.error(data.errors)
+    return data
   } else {
     const parsedData = ContributionsTransformer.fetch(data.data)
     return parsedData

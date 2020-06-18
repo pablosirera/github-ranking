@@ -14,7 +14,10 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/terminal.svg' }],
+    script: [
+      { src: 'https://buttons.github.io/buttons.js', async: true, defer: true }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -47,7 +50,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/toast'
   ],
   /*
    ** Axios module configuration
@@ -55,6 +59,12 @@ export default {
    */
   axios: {
     baseURL: 'https://api.github.com'
+  },
+  toast: {
+    position: 'top-center',
+    duration: 2000,
+    theme: 'toasted-primary',
+    singleton: true
   },
   /*
    ** Build configuration

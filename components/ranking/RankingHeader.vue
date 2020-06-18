@@ -34,7 +34,6 @@ $purple: #b4a3ff;
 h3 {
   text-align: center;
   font-size: 2em;
-  margin-top: 2.5em;
   padding-bottom: 0.5em;
   font-family: 'Catamaran';
   font-weight: 500;

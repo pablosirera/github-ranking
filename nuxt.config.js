@@ -30,7 +30,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/ga.js', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -38,7 +38,13 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-143056165-5'
+      }
+    ]
   ],
   /*
    ** Nuxt.js modules

@@ -2,7 +2,6 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5cde4eb2-1c80-4af6-9926-baa2276310a0/deploy-status)](https://app.netlify.com/sites/github-ranking/deploys)
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat)]()
-[![GitHub stars](https://img.shields.io/github/stars/pablosirera/github-ranking.svg?style=social&label=Star)]()
 
 > Github contributors ranking
 

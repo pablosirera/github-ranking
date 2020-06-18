@@ -14,9 +14,9 @@
       </div>
     </section>
     <footer class="footer">
-      <a href="https://twitter.com/pablosirera">Twitter</a>
+      <a target="_blank" href="https://twitter.com/pablosirera">Twitter</a>
       <span class="heart">💚</span>
-      <a href="https://github.com/pablosirera">Github</a>
+      <a target="_blank" href="https://github.com/pablosirera">Github</a>
     </footer>
   </div>
 </template>

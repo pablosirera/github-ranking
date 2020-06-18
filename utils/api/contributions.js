@@ -2,13 +2,21 @@
 
 import ContributionsTransformer from '~/transformers/Contributions'
 
-export async function getContributions(token, username) {
+export async function getContributions(token, username, year) {
+  let years = []
+  let from = null
+  let to = null
   const headers = {
     Authorization: `bearer ${token}`
   }
-  const years = await getYears(token)
-  const from = new Date(years[1], 0, 1).toISOString()
-  const to = new Date(years[1], 11, 31).toISOString()
+  if (!year) {
+    years = await getYears(token)
+    from = new Date(years[0], 0, 1).toISOString()
+    to = new Date(years[0], 11, 31).toISOString()
+  } else {
+    from = new Date(year, 0, 1).toISOString()
+    to = new Date(year, 11, 31).toISOString()
+  }
 
   const body = {
     query: `query {

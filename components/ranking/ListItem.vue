@@ -167,7 +167,6 @@ li {
 @media (max-width: $mobile) {
   .list-sm {
     margin: 0;
-    padding: 1em 0;
   }
 }
 </style>

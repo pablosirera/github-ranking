@@ -20,7 +20,7 @@ export default {
       {
         async: true,
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-        dataAdClient: process.env.ADSENSE_KEY
+        'data-ad-client': process.env.ADSENSE_KEY
       }
     ]
   },

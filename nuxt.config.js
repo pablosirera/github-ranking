@@ -4,19 +4,24 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.NPM_PACKAGE_NAME || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: process.env.NPM_PACKAGE_DESCRIPTION || ''
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/terminal.svg' }],
     script: [
-      { src: 'https://buttons.github.io/buttons.js', async: true, defer: true }
+      { src: 'https://buttons.github.io/buttons.js', async: true, defer: true },
+      {
+        async: true,
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        dataAdClient: process.env.ADSENSE_KEY
+      }
     ]
   },
   /*
@@ -77,7 +82,10 @@ export default {
     singleton: true
   },
   env: {
-    GITHUB_SECRET_TOKEN: process.env.GITHUB_SECRET_TOKEN
+    GITHUB_SECRET_TOKEN: process.env.GITHUB_SECRET_TOKEN,
+    ADSENSE_KEY: process.env.ADSENSE_KEY,
+    NPM_PACKAGE_NAME: process.env.NPM_PACKAGE_NAME,
+    NPM_PACKAGE_DESCRIPTION: process.env.NPM_PACKAGE_DESCRIPTION
   },
   /*
    ** Build configuration

@@ -17,10 +17,9 @@
     </b-field>
     <b-field>
       <b-select v-model="year" placeholder="Select year" expanded>
-        <option value="2020">2020</option>
-        <option value="2019">2019</option>
-        <option value="2018">2018</option>
-        <option value="2017">2017</option>
+        <option v-for="year in getLastYears()" :key="year" :value="year">
+          {{ year }}
+        </option>
       </b-select>
     </b-field>
     <b-button
@@ -79,6 +78,21 @@ export default {
         }
         return 0
       })
+    },
+    getLastYears() {
+      let i = 0
+      const totalYears = 4
+      const years = []
+
+      const date = new Date()
+      const year = date.getFullYear()
+
+      while (i < totalYears) {
+        years.push(year - i)
+        i++
+      }
+
+      return years
     }
   },
   head() {

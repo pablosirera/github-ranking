@@ -25,7 +25,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.2.2",
     "@nuxtjs/toast": "^3.3.1",
-    "nuxt": "^2.14.7",
+    "nuxt": "^3.4.3",
     "nuxt-buefy": "^0.3.2"
   },
   "devDependencies": {
